@@ -20,7 +20,9 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Routes
 const authRoute = require('./routes/auth');
+const taskRoute = require('./routes/tasks');
 app.use('/api/auth', authRoute);
+app.use('/api/tasks', taskRoute);
 
 // Define a simple route
 app.get('/', (req, res) => {
