@@ -18,6 +18,10 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
 
+// Routes
+const authRoute = require('./routes/auth');
+app.use('/api/auth', authRoute);
+
 // Define a simple route
 app.get('/', (req, res) => {
   res.send('Task Manager API');
